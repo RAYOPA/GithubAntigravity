@@ -12,7 +12,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api/v1';
+const API_BASE = 'https://antigravity-backend-xyrz.onrender.com/api/v1';
 
 export const AnalyticsDashboard = () => {
   const [summary, setSummary] = useState(null);

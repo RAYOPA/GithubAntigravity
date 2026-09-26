@@ -11,8 +11,8 @@ import { AnalyticsDashboard } from './components/AnalyticsDashboard';
 import { BookingModal } from './components/BookingModal';
 import { Sparkles, X } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api/v1';
-const SOCKET_URL = 'http://localhost:5000';
+const API_BASE = 'https://antigravity-backend-xyrz.onrender.com/api/v1';
+const SOCKET_URL = 'https://antigravity-backend-xyrz.onrender.com';
 
 export function App() {
   const [activeTab, setActiveTab] = useState('catalog');

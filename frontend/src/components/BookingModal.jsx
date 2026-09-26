@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:5000/api/v1';
+const API_BASE = 'https://antigravity-backend-xyrz.onrender.com/api/v1';
 
 export const BookingModal = ({ 
   resource, 

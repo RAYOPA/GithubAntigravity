@@ -16,7 +16,7 @@ import {
   Database
 } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api/v1';
+const API_BASE = 'https://antigravity-backend-xyrz.onrender.com/api/v1';
 
 export const LiveDemoLab = ({ resources = [], onReloadData }) => {
   const [activeStep, setActiveStep] = useState(1);
