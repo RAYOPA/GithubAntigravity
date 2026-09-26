@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Campus — GiST v2.1 Exclusion Lock Engine</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN with Stitch Cyber-Campus Theme Tokens -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#353943",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "surface-tint": "#c0c1ff",
+              "surface": "#0f131c",
+              "tertiary-fixed": "#acedff",
+              "background": "#0f131c",
+              "error-container": "#93000a",
+              "inverse-surface": "#dfe2ef",
+              "on-background": "#dfe2ef",
+              "on-error-container": "#ffdad6",
+              "secondary-container": "#571bc1",
+              "surface-container": "#1c1f29",
+              "surface-container-high": "#262a34",
+              "on-primary": "#1000a9",
+              "on-tertiary-fixed": "#001f26",
+              "inverse-primary": "#494bd6",
+              "tertiary-fixed-dim": "#4cd7f6",
+              "primary-fixed-dim": "#c0c1ff",
+              "primary-fixed": "#e1e0ff",
+              "secondary": "#d0bcff",
+              "on-secondary-fixed": "#23005c",
+              "on-surface-variant": "#c7c4d7",
+              "outline-variant": "#464554",
+              "on-tertiary": "#003640",
+              "on-tertiary-container": "#002f38",
+              "primary": "#c0c1ff",
+              "tertiary-container": "#009eb9",
+              "inverse-on-surface": "#2c303a",
+              "outline": "#908fa0",
+              "primary-container": "#8083ff",
+              "on-primary-container": "#0d0096",
+              "on-secondary-fixed-variant": "#5516be",
+              "on-primary-fixed": "#07006c",
+              "on-error": "#690005",
+              "on-secondary-container": "#c4abff",
+              "on-surface": "#dfe2ef",
+              "error": "#ffb4ab",
+              "on-tertiary-fixed-variant": "#004e5c",
+              "tertiary": "#4cd7f6",
+              "secondary-fixed-dim": "#d0bcff",
+              "on-secondary": "#3c0091",
+              "surface-container-low": "#181b25",
+              "surface-variant": "#31353f",
+              "surface-container-lowest": "#0a0e17",
+              "surface-dim": "#0f131c",
+              "surface-container-highest": "#31353f",
+              "secondary-fixed": "#e9ddff"
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"]
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="bg-[#0a0e17] text-[#dfe2ef] antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

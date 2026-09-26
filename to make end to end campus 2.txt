@@ -1,0 +1,415 @@
+To build an end-to-end **Smart Campus Resource Management and Conflict Detection System**, here is the comprehensive blueprint detailing the **System Planning, Front-End Architecture, Back-End Service Design, and Database Schema Engine**.
+
+---
+
+## 1. System Planning & Workflow Orchestration
+
+The system solves manual logging inefficiencies, double bookings, and underutilized spaces by establishing an automated transactional workflow.
+
+```
+                  ┌─────────────────────────────────┐
+                  │   User Request (Web / Mobile)   │
+                  └────────────────┬────────────────┘
+                                   │
+                                   ▼
+                  ┌─────────────────────────────────┐
+                  │    JWT & RBAC Middleware        │
+                  │   (Student, Faculty, Admin)     │
+                  └────────────────┬────────────────┘
+                                   │
+                                   ▼
+            ┌──────────────────────────────────────────────┐
+            │   Conflict Engine & Buffer Time Evaluator    │
+            └──────┬────────────────────────────────┬──────┘
+                   │                                │
+      [ Conflict Detected ]                 [ Slot Available ]
+                   │                                │
+                   ▼                                ▼
+    ┌─────────────────────────────┐   ┌─────────────────────────────┐
+    │  Return 409 Conflict Error  │   │  Acquire Transaction Lock   │
+    │  + Offer Alternative Slots  │   │  (SELECT ... FOR UPDATE)    │
+    └─────────────────────────────┘   └──────────────┬──────────────┘
+                                                     │
+                                                     ▼
+                                      ┌─────────────────────────────┐
+                                      │  Execute Database Insert    │
+                                      │  (PostgreSQL GiST Exclude)  │
+                                      └──────────────┬──────────────┘
+                                                     │
+                                                     ▼
+                                      ┌─────────────────────────────┐
+                                      │ Broadcast Real-Time Update  │
+                                      │ (WebSocket Event to Clients)│
+                                      └─────────────────────────────┘
+
+```
+
+---
+
+## 2. Front-End Architecture (React.js / Next.js)
+
+The front end focuses on usability, fast interactive schedules, and immediate feedback during booking collisions.
+
+### Key Functional Components & Structure
+
+* **`ResourceCatalog` Component:** Interactive grid displaying rooms, labs, and equipment with live badges (`Available`, `Occupied`, `Maintenance`). Filterable by capacity, building zone, and equipment attributes.
+* **`TimelineGrid` Component:** Visual calendar view rendering continuous time blocks per resource. Clicking an open slot automatically populates the booking modal inputs.
+* **`BookingModal` Component:** Interactive form collecting event title, start time, end time, and equipment add-ons. Handles real-time validation and displays smart alternative suggestions if a conflict occurs.
+* **`LiveFloorPlan` Component:** Dynamic SVG or Canvas floor map color-coding rooms in real time (**Green** = Free, **Red** = Occupied, **Yellow** = Pending Check-in).
+
+### Production Front-End Integration Code
+
+Below is the complete React implementation using Tailwind CSS and Axios for submitting booking requests, handling 409 Conflict errors gracefully, and rendering feedback.
+
+```jsx
+import React, { useState } from 'react';
+import axios from 'axios';
+
+export const SmartBookingForm = ({ selectedResourceId, resourceName, onBookingSuccess }) => {
+  const [formData, setFormData] = useState({
+    title: '',
+    purpose: '',
+    startTime: '',
+    endTime: '',
+    attendeeCount: 1,
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState({ type: null, message: '' });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleBookingSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: null, message: '' });
+
+    // Client-side time check
+    if (new Date(formData.startTime) >= new Date(formData.endTime)) {
+      setStatus({ type: 'error', message: 'End time must be strictly after start time.' });
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        '/api/v1/bookings',
+        {
+          resource_id: selectedResourceId,
+          ...formData,
+        },
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem('auth_token')}` },
+        }
+      );
+
+      setStatus({ type: 'success', message: 'Resource booked successfully!' });
+      if (onBookingSuccess) onBookingSuccess(response.data.booking);
+    } catch (err) {
+      if (err.response && err.response.status === 409) {
+        setStatus({
+          type: 'error',
+          message: err.response.data.message || 'Scheduling Conflict Detected: Slot is unavailable.',
+        });
+      } else {
+        setStatus({
+          type: 'error',
+          message: err.response?.data?.message || 'Server error processing reservation.',
+        });
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="max-w-lg mx-auto bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-2xl text-slate-100">
+      <h2 className="text-xl font-bold mb-1 text-white">Reserve {resourceName || 'Campus Space'}</h2>
+      <p className="text-sm text-slate-400 mb-6">Automated conflict checking & instant confirmation</p>
+
+      {status.message && (
+        <div
+          className={`p-3 text-sm rounded-lg mb-4 border ${
+            status.type === 'error'
+              ? 'bg-rose-500/10 border-rose-500/30 text-rose-400'
+              : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+          }`}
+        >
+          {status.message}
+        </div>
+      )}
+
+      <form onSubmit={handleBookingSubmit} className="space-y-4">
+        <div>
+          <label className="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">
+            Event Title
+          </label>
+          <input
+            type="text"
+            name="title"
+            required
+            placeholder="e.g., AI Research Lab Workshop"
+            value={formData.title}
+            onChange={handleChange}
+            className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-indigo-500 text-sm"
+          />
+        </div>
+
+        <div>
+          <label className="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">
+            Purpose / Notes
+          </label>
+          <textarea
+            name="purpose"
+            rows="2"
+            placeholder="Brief explanation of activity..."
+            value={formData.purpose}
+            onChange={handleChange}
+            className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-indigo-500 text-sm"
+          />
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label className="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">
+              Start Time
+            </label>
+            <input
+              type="datetime-local"
+              name="startTime"
+              required
+              value={formData.startTime}
+              onChange={handleChange}
+              className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-indigo-500 text-xs"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">
+              End Time
+            </label>
+            <input
+              type="datetime-local"
+              name="endTime"
+              required
+              value={formData.endTime}
+              onChange={handleChange}
+              className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-indigo-500 text-xs"
+            />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full py-2.5 mt-2 bg-indigo-600 hover:bg-indigo-500 font-semibold rounded-lg text-white transition-all duration-200 text-sm disabled:opacity-50"
+        >
+          {loading ? 'Validating Availability...' : 'Confirm & Reserve Space'}
+        </button>
+      </form>
+    </div>
+  );
+};
+
+```
+
+---
+
+## 3. Back-End Architecture (Node.js Express + PostgreSQL Engine)
+
+The back end uses atomic SQL transactions with explicit row locking (`FOR UPDATE`) to ensure zero double bookings occur during concurrent submission bursts.
+
+### Complete REST API Engine Implementation
+
+```javascript
+const express = require('express');
+const { Pool } = require('pg');
+const router = express.Router();
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});
+
+/**
+ * POST /api/v1/bookings
+ * Atomic transaction handling conflict checks and booking insertion.
+ */
+router.post('/api/v1/bookings', async (req, res) => {
+  const { resource_id, title, purpose, startTime, endTime } = req.body;
+  const userId = req.user?.id || '00000000-0000-0000-0000-000000000000'; // Default/JWT user ID
+
+  // Time sequence validation
+  const start = new Date(startTime);
+  const end = new Date(endTime);
+
+  if (isNaN(start.getTime()) || isNaN(end.getTime()) || start >= end) {
+    return res.status(400).json({ 
+      success: false, 
+      message: 'Invalid temporal range: Start time must precede end time.' 
+    });
+  }
+
+  const client = await pool.connect();
+
+  try {
+    // Begin SQL Transaction
+    await client.query('BEGIN');
+
+    // 1. Fetch Resource Details & Buffer Requirement
+    const resourceRes = await client.query(
+      'SELECT buffer_time_minutes, status FROM resources WHERE resource_id = $1 FOR SHARE',
+      [resource_id]
+    );
+
+    if (resourceRes.rows.length === 0) {
+      await client.query('ROLLBACK');
+      return res.status(404).json({ success: false, message: 'Specified resource not found.' });
+    }
+
+    if (resourceRes.rows[0].status === 'MAINTENANCE') {
+      await client.query('ROLLBACK');
+      return res.status(400).json({ success: false, message: 'Resource is currently undergoing maintenance.' });
+    }
+
+    const bufferMinutes = resourceRes.rows[0].buffer_time_minutes || 0;
+
+    // Adjust validation window to account for setup/cleaning buffer times
+    const bufferedStart = new Date(start.getTime() - bufferMinutes * 60000).toISOString();
+    const bufferedEnd = new Date(end.getTime() + bufferMinutes * 60000).toISOString();
+
+    // 2. Row Lock & Overlap Check Query
+    const conflictQuery = `
+      SELECT booking_id, title, start_time, end_time 
+      FROM bookings
+      WHERE resource_id = $1
+        AND status IN ('PENDING', 'APPROVED', 'CHECKED_IN')
+        AND start_time < $3
+        AND end_time > $2
+      FOR UPDATE;
+    `;
+
+    const conflictResult = await client.query(conflictQuery, [resource_id, bufferedStart, bufferedEnd]);
+
+    if (conflictResult.rows.length > 0) {
+      await client.query('ROLLBACK');
+      return res.status(409).json({
+        success: false,
+        message: 'Scheduling Conflict: The resource is already reserved or in a mandatory cleaning buffer.',
+        conflictingBooking: conflictResult.rows[0]
+      });
+    }
+
+    // 3. Insert Booking Record
+    const insertQuery = `
+      INSERT INTO bookings (resource_id, user_id, title, purpose, start_time, end_time, status)
+      VALUES ($1, $2, $3, $4, $5, $6, 'APPROVED')
+      RETURNING booking_id, resource_id, title, start_time, end_time, status, created_at;
+    `;
+
+    const newBooking = await client.query(insertQuery, [
+      resource_id, userId, title, purpose, start.toISOString(), end.toISOString()
+    ]);
+
+    // Commit Transaction
+    await client.query('COMMIT');
+
+    return res.status(201).json({
+      success: true,
+      message: 'Booking successfully confirmed.',
+      booking: newBooking.rows[0]
+    });
+
+  } catch (error) {
+    await client.query('ROLLBACK');
+    console.error('Database transaction failed:', error);
+    return res.status(500).json({ success: false, message: 'Internal transaction error.' });
+  } finally {
+    client.release();
+  }
+});
+
+module.exports = router;
+
+```
+
+---
+
+## 4. Database Architecture & Schema (PostgreSQL Engine)
+
+To guarantee absolute transactional integrity at the database layer, we utilize the PostgreSQL `btree_gist` extension, setting an **Exclusion Constraint** on the time range (`tsrange`).
+
+```sql
+-- Enable Generalized Search Tree extension for scalar + range operations
+CREATE EXTENSION IF NOT EXISTS btree_gist;
+
+-- Enums
+CREATE TYPE user_role AS ENUM ('STUDENT', 'FACULTY', 'DEPT_HEAD', 'ADMIN');
+CREATE TYPE resource_category AS ENUM ('LAB', 'AUDITORIUM', 'CLASSROOM', 'EQUIPMENT', 'SPORTS_COURT');
+CREATE TYPE booking_status AS ENUM ('PENDING', 'APPROVED', 'REJECTED', 'CANCELLED', 'CHECKED_IN');
+
+-- 1. USERS TABLE
+CREATE TABLE users (
+    user_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    role user_role DEFAULT 'STUDENT',
+    department VARCHAR(100),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 2. RESOURCES TABLE
+CREATE TABLE resources (
+    resource_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name VARCHAR(100) NOT NULL,
+    category resource_category NOT NULL,
+    building VARCHAR(100) NOT NULL,
+    floor_number INT DEFAULT 1,
+    capacity INT DEFAULT 1,
+    status VARCHAR(20) DEFAULT 'AVAILABLE',
+    buffer_time_minutes INT DEFAULT 0, -- Setup/tear-down window in minutes
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 3. BOOKINGS TABLE WITH EXCLUSION CONSTRAINT
+CREATE TABLE bookings (
+    booking_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    resource_id UUID NOT NULL REFERENCES resources(resource_id) ON DELETE CASCADE,
+    user_id UUID NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
+    title VARCHAR(150) NOT NULL,
+    purpose TEXT,
+    start_time TIMESTAMP WITH TIME ZONE NOT NULL,
+    end_time TIMESTAMP WITH TIME ZONE NOT NULL,
+    
+    -- Generated PostgreSQL Range Type for continuous time windows
+    time_range TSRANGE GENERATED ALWAYS AS (tsrange(start_time, end_time, '[)')) STORED,
+    status booking_status DEFAULT 'APPROVED',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+
+    -- Temporal check constraint
+    CONSTRAINT chk_start_before_end CHECK (end_time > start_time),
+
+    -- EXCLUSION CONSTRAINT: Prevents any two overlapping bookings for the same resource
+    CONSTRAINT prevent_overlapping_reservations 
+    EXCLUDE USING gist (
+        resource_id WITH =,
+        time_range WITH &&
+    ) WHERE (status IN ('PENDING', 'APPROVED', 'CHECKED_IN'))
+);
+
+-- INDEXES FOR FAST API LOOKUPS AND DASHBOARD ANALYTICS
+CREATE INDEX idx_bookings_spatial_temporal ON bookings USING gist (resource_id, time_range);
+CREATE INDEX idx_user_booking_history ON bookings(user_id, status);
+
+```
+
+---
+
+## 5. Live Demo Execution Plan for Hackathons
+
+To maximum judges' interest, present the solution through this 3-step live demo sequence:
+
+1. **Dual-Browser Concurrency Stress Test:** Open two browser tabs side-by-side. Fill out the exact same room and time slot on both tabs. Click "Submit" on both simultaneously. Show that Tab 1 confirms while Tab 2 catches a `409 Conflict` error within milliseconds.
+2. **Dynamic Buffer Visualization:** Show a room booked from 2:00 PM to 3:00 PM with a 15-minute cleaning buffer. Demonstrate that a second attempt to book from 3:00 PM to 3:15 PM is automatically flagged as a buffer conflict.
+3. **IoT Ghost-Booking Release Simulation:** Trigger a simulated 15-minute timer countdown for a booking. When no check-in ping is received, show the database automatically set status to `CANCELLED` and update the live dashboard via WebSockets.

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;background-color:#0a0e17;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-bright":"#353943","on-primary-fixed-variant":"#2f2ebe","surface-tint":"#c0c1ff","surface":"#0f131c","tertiary-fixed":"#acedff","background":"#0f131c","error-container":"#93000a","inverse-surface":"#dfe2ef","on-background":"#dfe2ef","on-error-container":"#ffdad6","secondary-container":"#571bc1","surface-container":"#1c1f29","surface-container-high":"#262a34","on-primary":"#1000a9","on-tertiary-fixed":"#001f26","inverse-primary":"#494bd6","tertiary-fixed-dim":"#4cd7f6","primary-fixed-dim":"#c0c1ff","primary-fixed":"#e1e0ff","secondary":"#d0bcff","on-secondary-fixed":"#23005c","on-surface-variant":"#c7c4d7","outline-variant":"#464554","on-tertiary":"#003640","on-tertiary-container":"#002f38","primary":"#c0c1ff","tertiary-container":"#009eb9","inverse-on-surface":"#2c303a","outline":"#908fa0","primary-container":"#8083ff","on-primary-container":"#0d0096","on-secondary-fixed-variant":"#5516be","on-primary-fixed":"#07006c","on-error":"#690005","on-secondary-container":"#c4abff","on-surface":"#dfe2ef","error":"#ffb4ab","on-tertiary-fixed-variant":"#004e5c","tertiary":"#4cd7f6","secondary-fixed-dim":"#d0bcff","on-secondary":"#3c0091","surface-container-low":"#181b25","surface-variant":"#31353f","surface-container-lowest":"#0a0e17","surface-dim":"#0f131c","surface-container-highest":"#31353f","secondary-fixed":"#e9ddff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-lg":"1.5rem","gutter-mobile":"0.75rem","margin-mobile":"1rem",margin:"2rem",gutter:"1.5rem","space-xs":"0.25rem","space-md":"1rem","space-xl":"2.5rem","space-sm":"0.5rem"},fontFamily:{"body-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-tech-lg":["JetBrains Mono"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"code-sm":["JetBrains Mono"],"label-tech-md":["JetBrains Mono"]},fontSize:{"body-lg":["1rem",{lineHeight:"1.6rem",letterSpacing:"0em",fontWeight:"400"}],"headline-xl":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.02em",fontWeight:"700"}],"display-lg-mobile":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.02em",fontWeight:"800"}],"display-lg":["3.5rem",{lineHeight:"4rem",letterSpacing:"-0.03em",fontWeight:"800"}],"title-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"0em",fontWeight:"600"}],"headline-md":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.01em",fontWeight:"600"}],"label-tech-lg":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.02em",fontWeight:"600"}],"headline-xl-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.01em",fontWeight:"700"}],"body-md":["0.875rem",{lineHeight:"1.4rem",letterSpacing:"0em",fontWeight:"400"}],"code-sm":["0.6875rem",{lineHeight:"0.95rem",letterSpacing:"0.01em",fontWeight:"400"}],"label-tech-md":["0.75rem",{lineHeight:"1rem",letterSpacing:"0.04em",fontWeight:"500"}]}}}};</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0e17]/85 backdrop-blur-2xl border-b border-indigo-500/20"><div class="h-20 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-max"><img alt="Smart Campus GiST Shield Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WCOkYWEcdebwqCPbGhy6Jy-0Ie8bcDtNU1Wet3mhV7YECELyttNjQgXlbV-ogKtkuW8uZdIZGNhiyPNoqI1Tpy5p7kIdCgq7vgsj6OOW-NIXir7T3KWG0b3TgPhjlHQ7DiZ_fUMOq7kgKA3Ce_Kt5fAgNNy4hLx52VKyQH7ze_LMLFMvUI1zYklmJixJg6uRV2ZN8NIw00bl6Ic06BMtR6bYBziSLXQNg83noDKOZlvycNIjFwLTQVaw"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-title-sm font-extrabold tracking-tight text-on-surface uppercase">Smart Campus</span><span class="font-code-sm text-code-sm uppercase px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary border border-tertiary-container/30">GiST v2.1 Exclusion Lock Engine</span></div><div class="flex items-center gap-space-sm mt-0.5"><div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-low border border-outline-variant/40"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-label-tech-md text-code-sm text-on-surface-variant font-medium">Real-Time Engine Active</span><span class="font-code-sm text-code-sm text-tertiary-fixed-dim border-l border-outline-variant/50 pl-1.5">14ms</span></div></div></div></div><nav class="hidden xl:flex items-center gap-1.5 bg-surface-container-lowest/80 p-1 rounded-xl border border-outline-variant/30" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm shadow-indigo-500/20"><a class="px-3 py-1.5 rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="catalog-and-booking" href="#">Catalog &amp; Booking</a><a class="px-3 py-1.5 rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="timeline-schedule" href="#">Timeline Schedule</a><a class="px-3 py-1.5 rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="live-floor-map" href="#">Live Floor Map</a><a class="relative px-3 py-1.5 rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-path="live-demo-lab" href="#"><span>Live Demo Lab</span><span class="px-1.5 py-0.5 rounded-full text-code-sm font-label-tech-md font-bold tracking-wider uppercase bg-tertiary/15 text-tertiary border border-tertiary/40 shadow-[0_0_8px_rgba(76,215,246,0.25)]">Judge Demo</span></a><a class="px-3 py-1.5 rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="bookings-and-qr-check-in" href="#">Bookings &amp; QR Check-in</a><a class="px-3 py-1.5 rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="analytics-and-reports" href="#">Analytics &amp; Reports</a></nav><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-3 px-3 py-1.5 bg-surface-container-low/90 rounded-lg border border-outline-variant/30 font-label-tech-md text-code-sm"><div class="flex items-center gap-1"><span class="text-on-surface-variant">Active Rooms:</span><span class="text-tertiary font-bold">42/56</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span class="text-on-surface-variant">Blocked Collisions:</span><span class="text-error font-bold">128</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span class="text-on-surface-variant">GiST:</span><span class="text-secondary font-bold">Synced</span></div></div><div class="relative flex items-center"><select aria-label="User Persona Role Switcher" class="appearance-none bg-surface-container-high text-on-surface font-label-tech-md text-code-sm pl-3 pr-8 py-2 rounded-lg border border-outline-variant/40 focus:border-tertiary focus:outline-none cursor-pointer transition-colors"><option>Aarav Sharma (Student)</option><option>Dr. Priya Menon (Faculty)</option><option>Rahul Verma (Facility Manager)</option><option>System Admin (Superuser)</option></select><span class="material-symbols-outlined absolute right-2 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface-container-lowest min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive State Store Script -->
+<script>
+    window.__appState = {
+      selectedBuilding: 'all',
+      selectedType: 'all',
+      selectedStatus: 'all',
+      searchQuery: '',
+      modalOpen: true,
+      selectedRoom: 'Quantum Computing & AI Lab (LAB-204)',
+      selectedRoomCode: 'LAB-204',
+      startTime: '13:30',
+      endTime: '15:30',
+      conflictDetected: true,
+      autoResolveSlot: null
+    };
+
+    function filterCards() {
+      const q = (document.getElementById('searchInput')?.value || '').toLowerCase();
+      const cards = document.querySelectorAll('.venue-card');
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const bldg = card.dataset.building || '';
+        const type = card.dataset.type || '';
+        const status = card.dataset.status || '';
+
+        const matchesQ = !q || text.includes(q);
+        const matchesBldg = window.__appState.selectedBuilding === 'all' || bldg === window.__appState.selectedBuilding;
+        const matchesType = window.__appState.selectedType === 'all' || type === window.__appState.selectedType;
+        const matchesStatus = window.__appState.selectedStatus === 'all' || status === window.__appState.selectedStatus;
+
+        if (matchesQ && matchesBldg && matchesType && matchesStatus) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      const counter = document.getElementById('matchCounter');
+      if (counter) counter.innerText = visibleCount;
+    }
+
+    function setFilter(category, val, element) {
+      window.__appState[category] = val;
+      const group = element.closest('.filter-group');
+      if (group) {
+        group.querySelectorAll('button').forEach(btn => {
+          btn.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+          btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        element.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        element.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+      }
+      filterCards();
+    }
+
+    function openBookingModal(roomName, roomCode, defaultConflict = false) {
+      const modal = document.getElementById('gistBookingModal');
+      const roomTitle = document.getElementById('modalRoomTitle');
+      const roomSub = document.getElementById('modalRoomSub');
+      if (modal && roomTitle) {
+        roomTitle.innerText = roomName;
+        if (roomSub) roomSub.innerText = 'Node Key: ' + roomCode + ' // GiST Spatio-Temporal Domain';
+        modal.classList.remove('hidden');
+        if (defaultConflict || roomCode === 'LAB-204') {
+          triggerConflictState(true);
+        } else {
+          triggerConflictState(false);
+        }
+      }
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('gistBookingModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function triggerConflictState(hasConflict) {
+      window.__appState.conflictDetected = hasConflict;
+      const conflictBox = document.getElementById('gistConflictNotice');
+      const submitBtn = document.getElementById('submitGiSTBtn');
+      const sqlBanner = document.getElementById('conflictSqlLog');
+
+      if (hasConflict) {
+        conflictBox?.classList.remove('hidden');
+        sqlBanner?.classList.remove('hidden');
+        if (submitBtn) {
+          submitBtn.classList.remove('bg-gradient-to-r', 'from-indigo-600', 'to-violet-600', 'hover:opacity-90');
+          submitBtn.classList.add('bg-surface-container-high', 'text-on-surface-variant', 'cursor-not-allowed', 'opacity-60');
+          submitBtn.innerText = 'Reservation Blocked (GiST 409 Conflict)';
+        }
+      } else {
+        conflictBox?.classList.add('hidden');
+        sqlBanner?.classList.add('hidden');
+        if (submitBtn) {
+          submitBtn.classList.remove('bg-surface-container-high', 'text-on-surface-variant', 'cursor-not-allowed', 'opacity-60');
+          submitBtn.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-violet-600', 'hover:opacity-90', 'text-on-primary');
+          submitBtn.innerText = 'Confirm GiST Lock Booking';
+        }
+      }
+    }
+
+    function applyRecommendation(slotTime, altRoom) {
+      if (altRoom) {
+        const titleEl = document.getElementById('modalRoomTitle');
+        if (titleEl) titleEl.innerText = altRoom;
+      }
+      const timeInput = document.getElementById('bookingTimeRange');
+      if (timeInput) timeInput.value = slotTime;
+      triggerConflictState(false);
+    }
+  </script>
+<!-- Telemetry and Operations Ticker Strip -->
+<div class="w-full bg-surface-container-low px-space-lg py-space-sm flex flex-wrap items-center justify-between gap-space-md shadow-md">
+<div class="flex items-center gap-space-md flex-wrap">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span>
+</span>
+<span class="font-label-tech-lg text-label-tech-md text-on-surface uppercase tracking-wider">Campus Spatial Node Active</span>
+</div>
+<div class="h-4 w-px bg-outline-variant opacity-40 hidden sm:block"></div>
+<div class="flex items-center gap-2 font-code-sm text-code-sm text-on-surface-variant">
+<span>EXCLUDE Predicate:</span>
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-tertiary font-label-tech-md">gist(room_id WITH =, time_span WITH &amp;&amp;)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-wrap">
+<div class="flex items-center gap-2 font-label-tech-md text-code-sm">
+<span class="text-on-surface-variant">Constraint Health:</span>
+<span class="text-secondary font-bold">100.00% Zero-Overlap Enforced</span>
+</div>
+<div class="flex items-center gap-2 font-label-tech-md text-code-sm">
+<span class="text-on-surface-variant">Matched Rooms:</span>
+<span class="text-tertiary font-bold" id="matchCounter">6</span>
+<span class="text-on-surface-variant">/ 56</span>
+</div>
+</div>
+</div>
+<!-- Primary Worksurface -->
+<div class="w-full px-space-lg py-space-lg flex flex-col gap-space-lg max-w-[1920px] mx-auto">
+<!-- Top Command Strip: Search & Filter Matrix -->
+<div class="flex flex-col gap-space-md bg-surface-container/90 backdrop-blur-xl p-space-md rounded-xl shadow-xl">
+<!-- Search Input with Cyber Accent -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center gap-space-md">
+<div class="relative flex-1 group">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant group-focus-within:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full pl-10 pr-24 py-3 bg-surface-container-lowest/80 text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-1 focus:ring-tertiary transition-all placeholder:text-outline" id="searchInput" oninput="filterCards()" placeholder="Search by room code (e.g. CS-301), capacity, projector, VR rigs, Dolby Atmos..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container-high px-2 py-1 rounded">⌘K / Space</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<button class="px-4 py-3 bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-tech-md text-code-sm rounded-lg transition-colors flex items-center gap-1.5" onclick="document.getElementById('searchInput').value=''; filterCards();">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset Matrix</span>
+</button>
+<button class="px-4 py-3 bg-error-container/40 hover:bg-error-container/60 text-error font-label-tech-md text-code-sm rounded-lg transition-all flex items-center gap-1.5 shadow-sm" onclick="openBookingModal('Quantum Computing &amp; AI Lab (LAB-204)', 'LAB-204', true)">
+<span class="material-symbols-outlined text-[16px]">crisis_alert</span>
+<span>GiST 409 Interceptor Demo</span>
+</button>
+</div>
+</div>
+<!-- Filter Matrix Rows -->
+<div class="flex flex-col gap-space-sm font-label-tech-md text-code-sm">
+<!-- Row 1: Building Filters -->
+<div class="flex items-center gap-2 flex-wrap filter-group">
+<span class="text-outline uppercase text-[10px] tracking-wider w-24 flex-shrink-0">Building</span>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-semibold transition-all" onclick="setFilter('selectedBuilding', 'all', this)">All Buildings</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all" onclick="setFilter('selectedBuilding', 'mab', this)">Main Academic Block (MAB)</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all" onclick="setFilter('selectedBuilding', 'sb', this)">Science Block (SB)</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all" onclick="setFilter('selectedBuilding', 'irc', this)">Innovation &amp; Research Center (IRC)</button>
+</div>
+<!-- Row 2: Resource Types -->
+<div class="flex items-center gap-2 flex-wrap filter-group">
+<span class="text-outline uppercase text-[10px] tracking-wider w-24 flex-shrink-0">Classification</span>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-semibold transition-all" onclick="setFilter('selectedType', 'all', this)">All Types</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all" onclick="setFilter('selectedType', 'auditorium', this)">Auditorium (400+)</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all" onclick="setFilter('selectedType', 'classroom', this)">Smart Classroom</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all" onclick="setFilter('selectedType', 'lab', this)">Computer Lab</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all" onclick="setFilter('selectedType', 'seminar', this)">Seminar Hall</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all" onclick="setFilter('selectedType', 'robotics', this)">Robotics &amp; AI Studio</button>
+</div>
+<!-- Row 3: Status Filters -->
+<div class="flex items-center gap-2 flex-wrap filter-group">
+<span class="text-outline uppercase text-[10px] tracking-wider w-24 flex-shrink-0">Live State</span>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-semibold transition-all" onclick="setFilter('selectedStatus', 'all', this)">All Statuses</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all flex items-center gap-1.5" onclick="setFilter('selectedStatus', 'available', this)">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span>Available Now</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all flex items-center gap-1.5" onclick="setFilter('selectedStatus', 'occupied', this)">
+<span class="w-2 h-2 rounded-full bg-rose-500"></span>
+<span>In Session</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all flex items-center gap-1.5" onclick="setFilter('selectedStatus', 'grace', this)">
+<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+<span>Grace Check-in</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Venue Cards Grid: Futuristic High-Density Architectural Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Card 1: Turing Grand Auditorium -->
+<div class="venue-card group flex flex-col bg-surface-container/80 backdrop-blur-xl rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-2xl hover:bg-surface-container-high/90 relative" data-building="mab" data-status="available" data-type="auditorium">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" data-alt="A grand futuristic academic auditorium with 450 stadium seats upholstered in dark slate fabric, dual laser presentation displays on a brushed steel stage, warm cyan under-step safety glow lighting, acoustic faceted wood panels, hyper-modern minimalist architecture, photorealistic 8k render." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTXQV_Q_ucArSbcWsFuNYIXyJ1vDQYjPfRvmEOm3AQcwyXXjn3lSTG2ZmNfNe4gaVvErpBFSSBdxLAfdmfKioam-Q0DuX73_AhOpgW5McMnJypr5Hi3VmddsGMir3EDD4Qu0aoZy5OhQcqame1NAH9UeGz5QCmTJQn6GLXzS0J8sE5I_--6FueNLBbJPFMcPBXgVt3bHwQAvZgNqxDy5HYh_uGocOmCdMIgEijGArLifvXTNiZ1EZg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-emerald-500/20 backdrop-blur-md text-emerald-300 font-label-tech-md text-code-sm flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>Available Now</span>
+</span>
+</div>
+<div class="absolute top-3 right-3 flex items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-code-sm text-code-sm text-tertiary">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+<span>GiST: Free</span>
+</div>
+<div class="absolute bottom-2 left-3 right-3 flex items-end justify-between">
+<span class="font-code-sm text-code-sm text-on-surface-variant font-mono bg-surface-container-lowest/70 px-2 py-0.5 rounded">MAB-L0-AUD101</span>
+<span class="font-label-tech-md text-code-sm text-on-surface font-semibold bg-surface-container-lowest/70 px-2 py-0.5 rounded">450 Capacity</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold group-hover:text-primary transition-colors">Turing Grand Auditorium (AUD-101)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Main Academic Block, Ground Fl • Premier Venue for Global Keynotes</p>
+</div>
+<!-- Buffer Monospace Strip -->
+<div class="bg-surface-container-low p-2 rounded flex items-center justify-between font-label-tech-md text-code-sm">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">clean_hands</span>
+<span>30m Deep Sanitization Buffer</span>
+</div>
+<span class="text-on-surface-variant">Auto-Appended</span>
+</div>
+<!-- Amenities Bitmask / Badges -->
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">4K Laser Projection</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Dual Lectern Mic</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Dolby Atmos</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Wheelchair Access</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Wi-Fi 6 (1.8 Gbps)</span>
+</div>
+<!-- Action Footer -->
+<div class="pt-2 flex items-center justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-code-sm text-[10px] text-outline uppercase tracking-wider">Upcoming Constraint</span>
+<span class="font-label-tech-md text-code-sm text-on-surface">None • Free till 18:00</span>
+</div>
+<button class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-title-sm text-body-md font-semibold rounded-lg shadow-md transition-all flex items-center gap-1.5" onclick="openBookingModal('Turing Grand Auditorium (AUD-101)', 'AUD-101', false)">
+<span>Book Venue</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Quantum Computing & AI Lab (LAB-204) - Active In-Session / Hot Target -->
+<div class="venue-card group flex flex-col bg-surface-container/80 backdrop-blur-xl rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-2xl hover:bg-surface-container-high/90 relative" data-building="irc" data-status="occupied" data-type="lab">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" data-alt="Modern high-performance computer science research lab with 48 dual-display developer workstations, glowing indigo cooling loops on GPU towers, ambient soft cyan neon ceiling grids, polished concrete floor, students collaborating, high-tech academic facility, cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgT4RrumBvark1ZBgUiebW9XAuNI7T7AQ12Dk1wqlz3hdkvGYJtxbZiE97WKzB5KiPjdv-MPWF5U5-d8qdSrW0BJsnEN1GSwasVLpEEyiMRTXyzGJWG9MLYgX4ghpc1qtyR_nFRHvKWAN1T7HbdSWkZDzG63J9DhbZ4J7gHF5v1E2KzPEZ2zSMJHuvAw3rVDhZvFQV5EXkX-EBmYtoH57PnMReebKB8WWhz7GbdGxvl9zcmi8BjJRD"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-rose-500/20 backdrop-blur-md text-rose-300 font-label-tech-md text-code-sm flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-rose-500"></span>
+<span>In Session (Busy)</span>
+</span>
+</div>
+<div class="absolute top-3 right-3 flex items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-code-sm text-code-sm text-error">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>GiST: Range Engaged</span>
+</div>
+<div class="absolute bottom-2 left-3 right-3 flex items-end justify-between">
+<span class="font-code-sm text-code-sm text-on-surface-variant font-mono bg-surface-container-lowest/70 px-2 py-0.5 rounded">IRC-L2-LAB204</span>
+<span class="font-label-tech-md text-code-sm text-on-surface font-semibold bg-surface-container-lowest/70 px-2 py-0.5 rounded">48 Rigs</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold group-hover:text-primary transition-colors">Quantum Computing &amp; AI Lab (LAB-204)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Innovation Center, 2nd Fl • Accelerated Computing Tier-1</p>
+</div>
+<!-- Active Session Strip -->
+<div class="bg-surface-container-low p-2 rounded flex flex-col gap-1 font-label-tech-md text-code-sm">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-semibold text-tertiary">CS801: Distributed Systems</span>
+<span class="text-error font-mono font-bold">Ends 14:00</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant text-[11px]">
+<span>Instructor: Dr. Priya Menon</span>
+<span class="text-secondary font-mono">+15m Turnover Buffer</span>
+</div>
+</div>
+<!-- Amenities Bitmask / Badges -->
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">RTX 4090 Rigs</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Dual 4K Displays</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Gigabit Fiber</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">CUDA Cluster Uplink</span>
+</div>
+<!-- Action Footer -->
+<div class="pt-2 flex items-center justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-code-sm text-[10px] text-outline uppercase tracking-wider">Free Earliest</span>
+<span class="font-label-tech-md text-code-sm text-secondary">14:15 (Including buffer)</span>
+</div>
+<button class="px-4 py-2 bg-surface-container-high hover:bg-surface-variant text-primary font-title-sm text-body-md font-semibold rounded-lg shadow transition-all flex items-center gap-1.5" onclick="openBookingModal('Quantum Computing &amp; AI Lab (LAB-204)', 'LAB-204', true)">
+<span>Test Reserve</span>
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Ada Lovelace Smart Lecture Hall -->
+<div class="venue-card group flex flex-col bg-surface-container/80 backdrop-blur-xl rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-2xl hover:bg-surface-container-high/90 relative" data-building="sb" data-status="grace" data-type="classroom">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" data-alt="Stepped smart university lecture hall with contemporary birch wood writing surfaces, curved interactive whiteboard walls, ceiling mounted auto-tracking 4k pan-tilt-zoom cameras, soft recessed ambient blue illumination, high architectural clarity, clean academic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA29BeinjS2j9XBWQmcBl7GEolxvwMRGPL6krW6gj8ty46AzdgV8tDeePJUZUKgk4AGxNN0mZUYgoBA-vrqEUGZ9g7R5Y1arjQzRDBlb6jO6miSvu-RZ04-RYFn32mmfjpekDJFBpkLofg7QtDb6cgyjp4FpUxMYHpq3kyHFLNkmN8A3k2ddCyClen9K5il96w9a8-sLgISAceApnZBvpShfXd3UcULvFrwWOefXB_gYfbiBFmsvQoV"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-amber-500/20 backdrop-blur-md text-amber-300 font-label-tech-md text-code-sm flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+<span>Pending Check-in</span>
+</span>
+</div>
+<div class="absolute top-3 right-3 flex items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-code-sm text-code-sm text-amber-400">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span class="font-mono">Grace: 07:42</span>
+</div>
+<div class="absolute bottom-2 left-3 right-3 flex items-end justify-between">
+<span class="font-code-sm text-code-sm text-on-surface-variant font-mono bg-surface-container-lowest/70 px-2 py-0.5 rounded">SB-L3-LH302</span>
+<span class="font-label-tech-md text-code-sm text-on-surface font-semibold bg-surface-container-lowest/70 px-2 py-0.5 rounded">120 Seats</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold group-hover:text-primary transition-colors">Ada Lovelace Smart Lecture Hall (LH-302)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Science Block, 3rd Fl • Hybrid Telepresence Tier</p>
+</div>
+<!-- Pending Grace Strip -->
+<div class="bg-surface-container-low p-2 rounded flex items-center justify-between font-label-tech-md text-code-sm">
+<div class="flex items-center gap-1.5 text-amber-300">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span>QR Grace: Auto-releasing in 7m</span>
+</div>
+<span class="text-on-surface-variant">15m Prep Buffer</span>
+</div>
+<!-- Amenities Bitmask / Badges -->
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Smart Whiteboard</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Auto-tracking Cameras</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Hybrid Zoom Room</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Array Microphones</span>
+</div>
+<!-- Action Footer -->
+<div class="pt-2 flex items-center justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-code-sm text-[10px] text-outline uppercase tracking-wider">Scheduled Organizer</span>
+<span class="font-label-tech-md text-code-sm text-on-surface">Prof. K. Subramanian</span>
+</div>
+<button class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-title-sm text-body-md font-semibold rounded-lg shadow-md transition-all flex items-center gap-1.5" onclick="openBookingModal('Ada Lovelace Smart Lecture Hall (LH-302)', 'LH-302', false)">
+<span>Queue Hold</span>
+<span class="material-symbols-outlined text-[16px]">history_toggle_off</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Von Neumann Seminar Hall (SEM-105) -->
+<div class="venue-card group flex flex-col bg-surface-container/80 backdrop-blur-xl rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-2xl hover:bg-surface-container-high/90 relative" data-building="mab" data-status="available" data-type="seminar">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container-lowest">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500 opacity-90" data-alt="Intimate tiered academic seminar hall with dark acoustic slatted wall paneling, conference video bar on 85 inch presentation display, ergonomic leather armchairs, integrated tabletop USB-C connectivity, high contrast atmospheric studio lighting, architectural photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBY1CuaEuzJnuQA9aWLuv7ZWFCV4naVVQomzo_0rtaq4budUw92yj9ydpafOsab_c_TZSGK06MdxcsC1xc83zCFD8fG6Iirto_SqMKjQHDSQT7edOhGEIk_vqHzu360uPQXdicAPLWKr0-H6F-r4FSacc0yzHCeKEBApriEd-KHgssKcK5XOX7Hf5vQRCeeDJOZyiQrsErl-8pnCHpRPPq7R411Ut256FlKwWgid20AzALFSySEYGQ0')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-emerald-500/20 backdrop-blur-md text-emerald-300 font-label-tech-md text-code-sm flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span>Available Now</span>
+</span>
+</div>
+<div class="absolute top-3 right-3 flex items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-code-sm text-code-sm text-tertiary">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+<span>GiST: Free</span>
+</div>
+<div class="absolute bottom-2 left-3 right-3 flex items-end justify-between">
+<span class="font-code-sm text-code-sm text-on-surface-variant font-mono bg-surface-container-lowest/70 px-2 py-0.5 rounded">MAB-L1-SEM105</span>
+<span class="font-label-tech-md text-code-sm text-on-surface font-semibold bg-surface-container-lowest/70 px-2 py-0.5 rounded">85 Seats</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold group-hover:text-primary transition-colors">Von Neumann Seminar Hall (SEM-105)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Main Academic Block, 1st Fl • Faculty Symposia &amp; Defenses</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded flex items-center justify-between font-label-tech-md text-code-sm">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>15m Turnover Buffer</span>
+</div>
+<span class="text-on-surface-variant">Idle State</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Wireless Presentation</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Acoustic Panels</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Video Bar Pro</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Podium Teleprompter</span>
+</div>
+<div class="pt-2 flex items-center justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-code-sm text-[10px] text-outline uppercase tracking-wider">Next Bound</span>
+<span class="font-label-tech-md text-code-sm text-on-surface">17:00 Dean Review</span>
+</div>
+<button class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-title-sm text-body-md font-semibold rounded-lg shadow-md transition-all flex items-center gap-1.5" onclick="openBookingModal('Von Neumann Seminar Hall (SEM-105)', 'SEM-105', false)">
+<span>Book Venue</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5: Cybersecurity War Room (SEC-401) -->
+<div class="venue-card group flex flex-col bg-surface-container/80 backdrop-blur-xl rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-2xl hover:bg-surface-container-high/90 relative" data-building="irc" data-status="occupied" data-type="lab">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container-lowest">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500 opacity-90" data-alt="Futuristic cyber operations center with curved mission control video walls, amber and neon violet status monitors, glass partition walls, encrypted communications terminals, darkened room atmosphere with glowing data visualizations, cinematic industrial design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLvA5CwttsI518W89k8gutHD0wwiuU_rbl8ozM8Ux-Ipz3YPZcHrLAFHOEzRc3QtjGUys0wUVMcSi00Ev3pRpDyVlAnrkggjszx1tCrloplMISvtZtDhH1z3nIF_s2KsWkALgBdxRTVcq9HLGsLTmKEM8d6LYR_3pa5sCeSV9uXqh0HNmm07joypVlCqif6XC_GhSvp3W8MB6I5s7kP3_h3NFgHjMa9W7eULqw_bzlkyfify0_1T1z')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-rose-500/20 backdrop-blur-md text-rose-300 font-label-tech-md text-code-sm flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-rose-500"></span>
+<span>In Session</span>
+</span>
+</div>
+<div class="absolute top-3 right-3 flex items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-code-sm text-code-sm text-error">
+<span class="material-symbols-outlined text-[14px]">shield_lock</span>
+<span>GiST: Range Engaged</span>
+</div>
+<div class="absolute bottom-2 left-3 right-3 flex items-end justify-between">
+<span class="font-code-sm text-code-sm text-on-surface-variant font-mono bg-surface-container-lowest/70 px-2 py-0.5 rounded">IRC-L4-SEC401</span>
+<span class="font-label-tech-md text-code-sm text-on-surface font-semibold bg-surface-container-lowest/70 px-2 py-0.5 rounded">32 Seats</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold group-hover:text-primary transition-colors">Cybersecurity War Room (SEC-401)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Innovation Center, 4th Fl • Isolated Air-Gapped Network</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded flex flex-col gap-1 font-label-tech-md text-code-sm">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-semibold text-error">Red Team Defense Drill</span>
+<span class="font-mono text-tertiary">Active</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant text-[11px]">
+<span>Lead: CyberSec Guild</span>
+<span class="text-secondary font-mono">+20m Air Circulation Buffer</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Air-Gapped Subnet</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Curved Video Wall</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Biometric Keycard</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">SIP Telephony</span>
+</div>
+<div class="pt-2 flex items-center justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-code-sm text-[10px] text-outline uppercase tracking-wider">Estimated Release</span>
+<span class="font-label-tech-md text-code-sm text-on-surface">16:00 UTC+5:30</span>
+</div>
+<button class="px-4 py-2 bg-surface-container-high hover:bg-surface-variant text-on-surface font-title-sm text-body-md font-semibold rounded-lg shadow transition-all flex items-center gap-1.5" onclick="openBookingModal('Cybersecurity War Room (SEC-401)', 'SEC-401', false)">
+<span>View Timeslots</span>
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6: Robotics & IoT Prototyping Hub (ENG-110) -->
+<div class="venue-card group flex flex-col bg-surface-container/80 backdrop-blur-xl rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-2xl hover:bg-surface-container-high/90 relative" data-building="sb" data-status="available" data-type="robotics">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container-lowest">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500 opacity-90" data-alt="Industrial modern robotics engineering laboratory with articulated robotic arms, soldering stations with fume extractors, 3D printing farm, aluminum workbenches, crisp clean white laboratory lighting with subtle turquoise shadows, architectural high detail." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2ykTL16iuP9DffvXGpzgJKbYDJBcS1iQRd4-kLA9yzMCW3u6DBelSSkuR_-qeXkV08Fg-ahbzBk8f9mN6qXyCNAS8ZfqOyaRTAq3UamLCx2ROQDluZ3gkI_a8Dole21uhWEwCZBxMu2a5Ibvz51NX73BAy_kl2QL1AytHonvMN-Q2xDbaO24bi0OCzEB5sdUVwH1MNjDVoyR0U8beiWwwNUjV7eBL-skKIv_hLDCZ19JjHL13BAd-')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-emerald-500/20 backdrop-blur-md text-emerald-300 font-label-tech-md text-code-sm flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span>Available Now</span>
+</span>
+</div>
+<div class="absolute top-3 right-3 flex items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-code-sm text-code-sm text-tertiary">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+<span>GiST: Free</span>
+</div>
+<div class="absolute bottom-2 left-3 right-3 flex items-end justify-between">
+<span class="font-code-sm text-code-sm text-on-surface-variant font-mono bg-surface-container-lowest/70 px-2 py-0.5 rounded">SB-L1-ENG110</span>
+<span class="font-label-tech-md text-code-sm text-on-surface font-semibold bg-surface-container-lowest/70 px-2 py-0.5 rounded">60 Workbench</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold group-hover:text-primary transition-colors">Robotics &amp; IoT Prototyping Hub (ENG-110)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Science Block, 1st Fl • Hardware Fabrication Center</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded flex items-center justify-between font-label-tech-md text-code-sm">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">build_circle</span>
+<span>25m Tool Reset &amp; Cleaning Buffer</span>
+</div>
+<span class="text-on-surface-variant">Safety Mandatory</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">6x Robotic Arms</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">3D Print Farm</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Soldering Stns</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-label-tech-md">Logic Analyzers</span>
+</div>
+<div class="pt-2 flex items-center justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-code-sm text-[10px] text-outline uppercase tracking-wider">Today's Window</span>
+<span class="font-label-tech-md text-code-sm text-tertiary">All-day Open Fabrication</span>
+</div>
+<button class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-title-sm text-body-md font-semibold rounded-lg shadow-md transition-all flex items-center gap-1.5" onclick="openBookingModal('Robotics &amp; IoT Prototyping Hub (ENG-110)', 'ENG-110', false)">
+<span>Book Venue</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- PostgreSQL GiST Technical Explanation Banner -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md shadow-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">database</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">PostgreSQL GiST Physical Exclusivity Guarantee</h4>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-code-sm text-[10px] uppercase font-bold">Zero Race-Conditions</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+            Our scheduling subsystem relies on PostgreSQL <span class="text-tertiary font-mono">btree_gist</span> constraints. Even during microsecond-level concurrent submissions from 5,000+ students, the transactional lock executes atomicity checks without application-layer race window vulnerabilities.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0 font-code-sm text-code-sm">
+<span class="bg-surface-container-highest px-3 py-1.5 rounded text-on-surface font-mono">Index: btree_gist(room_id, tsrange)</span>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE BOOKING MODAL WITH GIST CONFLICT INTERCEPTOR -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-black/85 backdrop-blur-xl" id="gistBookingModal">
+<div class="relative w-full max-w-4xl max-h-[92vh] flex flex-col bg-surface-container-low rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_35px_rgba(99,102,241,0.2)] overflow-hidden">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-md bg-surface-container flex items-center justify-between flex-shrink-0">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">calendar_add_on</span>
+<h2 class="font-headline-md text-title-sm font-bold text-on-surface" id="modalRoomTitle">Quantum Computing &amp; AI Lab (LAB-204)</h2>
+</div>
+<span class="font-code-sm text-code-sm text-tertiary" id="modalRoomSub">Node Key: LAB-204 // GiST Spatio-Temporal Domain</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-surface-variant flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="closeBookingModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Modal Body (Scrollable) -->
+<div class="p-space-lg flex flex-col gap-space-lg overflow-y-auto">
+<!-- GiST CONFLICT NOTICE BANNER (HTTP 409 Interceptor) -->
+<div class="p-space-md rounded-xl bg-error-container/20 shadow-inner flex flex-col gap-space-md" id="gistConflictNotice">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-error-container text-error flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-label-tech-lg text-label-tech-md font-bold text-error uppercase">HTTP 409 Conflict</span>
+<span class="font-code-sm text-code-sm bg-error-container/40 text-on-error-container px-2 py-0.5 rounded font-mono">GiST Exclusion Lock Violated</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                PostgreSQL Exclusion Constraint <code class="font-mono text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded">[gist_room_timeslot_excl]</code> triggered! The requested slot overlaps with active booking <span class="font-bold text-error">#BK-8842</span> and its mandatory <span class="text-secondary font-bold">15m turnover sanitization buffer</span>.
+              </p>
+</div>
+</div>
+<!-- Conflict Visual Overlap Timeline Diagram -->
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between font-code-sm text-code-sm">
+<span class="text-on-surface-variant">Spatio-Temporal Boundary Overlap Trace</span>
+<span class="text-error font-mono">Overlap: 30m direct + 15m buffer collision</span>
+</div>
+<!-- Overlap Bar Visualization -->
+<div class="relative h-12 w-full bg-surface-container rounded overflow-hidden flex items-center">
+<!-- Booked Segment (CS801) -->
+<div class="h-full bg-rose-950/70 text-rose-300 font-code-sm flex items-center justify-center px-2 z-10 w-[45%]">
+<span class="truncate">CS801: Distributed Systems (12:00 - 14:00)</span>
+</div>
+<!-- 15m Buffer Striped -->
+<div class="h-full bg-indigo-950/80 text-secondary font-code-sm flex items-center justify-center px-2 z-10 w-[15%] relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:6px_6px]"></div>
+<span class="truncate text-[10px] uppercase font-bold tracking-wider">Buffer (15m)</span>
+</div>
+<!-- Free Segment -->
+<div class="h-full bg-surface-container-low text-tertiary font-code-sm flex items-center justify-center px-2 w-[40%]">
+<span class="truncate text-[11px]">Free Node (14:15 &gt;)</span>
+</div>
+<!-- Overlapping Intent Bar Marker -->
+<div class="absolute top-1 bottom-1 left-[32%] w-[45%] bg-error/20 rounded z-20 flex items-center justify-center shadow-lg">
+<span class="font-label-tech-md text-[10px] text-error font-bold uppercase tracking-wider">Requested 13:30 - 15:30 [Violates GiST]</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-tech-md text-on-surface-variant">
+<span>12:00</span>
+<span>13:00</span>
+<span class="text-error font-bold">13:30 (Req)</span>
+<span class="text-secondary font-bold">14:00 (Buffer Start)</span>
+<span class="text-tertiary font-bold">14:15 (Safe)</span>
+<span>16:00</span>
+</div>
+</div>
+<!-- Conflict Engine Recommendations -->
+<div class="flex flex-col gap-2">
+<span class="font-label-tech-md text-code-sm uppercase tracking-wider text-tertiary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">auto_fix_high</span>
+<span>GiST Autonomous Remediation Suggestions (1-Click Auto-Resolve):</span>
+</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+<button class="text-left p-2.5 rounded-lg bg-surface-container-high hover:bg-tertiary/15 transition-all flex flex-col gap-1 group shadow-sm" onclick="applyRecommendation('14:15 - 16:15', null)" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-tech-md text-code-sm text-tertiary font-bold group-hover:text-primary">⚡ Slot 1: Post-Buffer</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+</div>
+<span class="font-body-md text-code-sm text-on-surface">14:15 - 16:15</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">Immediate resolution after deep clean</span>
+</button>
+<button class="text-left p-2.5 rounded-lg bg-surface-container-high hover:bg-tertiary/15 transition-all flex flex-col gap-1 group shadow-sm" onclick="applyRecommendation('16:30 - 18:30', null)" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-tech-md text-code-sm text-tertiary font-bold group-hover:text-primary">⚡ Slot 2: Extended Lab</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+</div>
+<span class="font-body-md text-code-sm text-on-surface">16:30 - 18:30</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">Zero conflicting sessions till night</span>
+</button>
+<button class="text-left p-2.5 rounded-lg bg-surface-container-high hover:bg-secondary/15 transition-all flex flex-col gap-1 group shadow-sm" onclick="applyRecommendation('13:30 - 15:30', 'Turing Grand Auditorium (AUD-101)')" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-tech-md text-code-sm text-secondary font-bold group-hover:text-primary">⚡ Slot 3: Switch Venue</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">swap_horiz</span>
+</div>
+<span class="font-body-md text-code-sm text-on-surface">AUD-101 at 13:30</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">Same original time window, free now</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Booking Form Fields -->
+<form class="flex flex-col gap-space-md" id="bookingReservationForm" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Event Title Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tech-md text-code-sm text-on-surface-variant uppercase tracking-wider">Event / Session Title</label>
+<input class="px-3.5 py-2.5 bg-surface-container text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-1 focus:ring-tertiary" id="eventTitleInput" type="text" value="Annual ACM ICPC Hackathon Briefing"/>
+</div>
+<!-- Time Window Input with Overlap Detector -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-tech-md text-code-sm text-on-surface-variant uppercase tracking-wider">Requested Time Window</label>
+<span class="font-code-sm text-[10px] text-error font-mono">Overlap triggers on 13:30</span>
+</div>
+<div class="relative">
+<input class="w-full px-3.5 py-2.5 bg-surface-container text-on-surface font-label-tech-md text-code-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-tertiary" id="bookingTimeRange" onchange="if(this.value.includes('13:30')){triggerConflictState(true);}else{triggerConflictState(false);}" type="text" value="13:30 - 15:30"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">access_time</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Purpose & Persona Role -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tech-md text-code-sm text-on-surface-variant uppercase tracking-wider">Academic Purpose / Justification</label>
+<select class="px-3.5 py-2.5 bg-surface-container text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-1 focus:ring-tertiary cursor-pointer">
+<option>Competitive Programming Guild Hackathon</option>
+<option>Credit Course Lecture / Lab Demonstration</option>
+<option>Faculty Research Syndicate Meeting</option>
+<option>External Keynote &amp; Industry Partnership</option>
+</select>
+</div>
+<!-- Expected Attendee Count -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-tech-md text-code-sm text-on-surface-variant uppercase tracking-wider">Attendee Headcount</label>
+<span class="font-code-sm text-[10px] text-tertiary">Max Cap: 48 (Safe)</span>
+</div>
+<input class="px-3.5 py-2.5 bg-surface-container text-on-surface font-label-tech-md text-body-md rounded-lg focus:outline-none focus:ring-1 focus:ring-tertiary" max="450" min="1" type="number" value="42"/>
+</div>
+</div>
+<!-- Audio/Visual Checklist Matrix -->
+<div class="flex flex-col gap-2">
+<label class="font-label-tech-md text-code-sm text-on-surface-variant uppercase tracking-wider">Resource Allocation Checklist</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 font-label-tech-md text-code-sm">
+<label class="flex items-center gap-2 p-2 rounded bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="rounded bg-surface-container-lowest text-primary focus:ring-0" type="checkbox"/>
+<span class="text-on-surface">Dual 4K Projection</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="rounded bg-surface-container-lowest text-primary focus:ring-0" type="checkbox"/>
+<span class="text-on-surface">RTX 4090 Rigs (All)</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="rounded bg-surface-container-lowest text-primary focus:ring-0" type="checkbox"/>
+<span class="text-on-surface">Lectern Wireless Mic</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="rounded bg-surface-container-lowest text-primary focus:ring-0" type="checkbox"/>
+<span class="text-on-surface">Auto Session Record</span>
+</label>
+</div>
+</div>
+<!-- SQL Conflict Trace Snippet Log -->
+<div class="bg-surface-container-lowest p-3 rounded-lg font-code-sm text-code-sm text-on-surface-variant flex flex-col gap-1" id="conflictSqlLog">
+<div class="flex items-center justify-between text-outline">
+<span>Database Exception Trace Log:</span>
+<span class="text-error font-mono">SQLSTATE[23P01]: exclusion_violation</span>
+</div>
+<p class="font-mono text-on-surface-variant break-all">
+              ERROR: conflicting key value violates exclusion constraint "gist_room_timeslot_excl"<br/>
+              DETAIL: Key (room_id, time_span)=(LAB-204, ["2025-10-24 13:30:00+00","2025-10-24 15:30:00+00")) conflicts with existing key (room_id, time_span)=(LAB-204, ["2025-10-24 12:00:00+00","2025-10-24 14:15:00+00")).
+            </p>
+</div>
+<!-- Modal Action Bar -->
+<div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 text-on-surface-variant font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span>GiST Isolation Level: SERIALIZABLE</span>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-tech-md text-code-sm transition-colors" onclick="closeBookingModal()" type="button">
+                Dismiss
+              </button>
+<button class="px-5 py-2.5 rounded-lg font-label-tech-md text-code-sm transition-all flex items-center justify-center gap-2 bg-surface-container-high text-on-surface-variant cursor-not-allowed opacity-60" id="submitGiSTBtn" onclick="alert('Booking Locked! PostgreSQL exclusion check passed.'); closeBookingModal();" type="button">
+                Reservation Blocked (GiST 409 Conflict)
+              </button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-indigo-500/10 py-space-lg"><div class="w-full px-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-label-tech-md text-code-sm text-on-surface-variant"><div class="flex items-center gap-space-sm"><span>Campus GiST Spatio-Temporal Constraint Kernel</span><span class="text-outline-variant">//</span><span>PostgreSQL EXCLUDE USING gist (room_id WITH =, time_span WITH &amp;&amp;)</span></div><div>© 2025 Smart Campus Orchestration Network. Autonomous System Node.</div></div></footer></body></html>

@@ -1,0 +1,1 @@
+smart campus resource booking and conflicit detection i want to make database for hackthon give planning and architecture and database on the problem statement
